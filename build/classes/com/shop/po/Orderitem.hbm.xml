@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019??6??6?? ????2:23:05 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.shop.po.Orderitem" table="ORDERITEM">
+        <id name="oid" type="java.lang.Integer">
+            <column name="OID" />
+            <generator class="assigned" />
+        </id>
+        <property name="oiid" type="java.lang.Integer">
+            <column name="OIID" />
+        </property>
+        <property name="count" type="java.lang.Integer">
+            <column name="COUNT" />
+        </property>
+        <property name="subtotal" type="java.lang.Double">
+            <column name="SUBTOTAL" />
+        </property>
+        <property name="pid" type="java.lang.Integer">
+            <column name="PID" />
+        </property>
+        <many-to-one name="product" class="com.shop.po.Product" fetch="join">
+            <column name="PRODUCT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
